@@ -1,0 +1,26 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>All available Jokes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-searchbar [(ngModel)]="searchText" (ionInput)="search()">
+
+  </ion-searchbar>
+
+  <ion-list inset>
+    <button ion-item *ngFor="let joke of jokes" (click)="jokeSelected(joke)">
+      {{ joke.setup }}
+    </button>
+  </ion-list>
+
+</ion-content>

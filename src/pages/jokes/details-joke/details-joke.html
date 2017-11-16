@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Joke Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngIf="joke">
+    <ion-item>
+      <ion-textarea
+          rows="4"
+          type="text"
+          placeholder="Setup"
+          [(ngModel)]="joke.setup">
+      </ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea
+        rows="4"
+        type="text"
+        placeholder="Punchline"
+        [(ngModel)]="joke.punchLine">
+      </ion-textarea>
+    </ion-item>
+    <button ion-button
+            color="dark"
+            full
+            round
+            (click)="update()">Update this joke</button>
+
+    <button ion-button
+            color="danger"
+            full
+            round
+            (click)="delete()">Delete this joke</button>
+  </ion-list>
+  <h5 *ngIf="!joke">NO JOKE, YOU ARE NOT FUNNY</h5>
+</ion-content>

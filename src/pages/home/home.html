@@ -3,16 +3,26 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Jokes2.0</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h3>Welcome to a world of fun</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <h5>
+   Today's Random Joke
+  </h5>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <p>{{joke?.setup}}</p>
+  <hr>
+  <p>{{joke?.punchLine}}</p>
+
+  <button ion-button
+          color="secondary"
+          full
+          round
+          (click)="getAnother()">Get yerself another random joke</button>
+
+
 </ion-content>
